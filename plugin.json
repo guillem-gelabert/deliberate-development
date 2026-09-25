@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "dd",
+  "version": "0.5.5",
+  "description": "Deliberate Development: dd:ground, dd:shape, dd:execute, dd:state and dd:help for grounding, shaping, executing, and resuming software work with durable task state.",
+  "author": {
+    "name": "Guillem Gelabert Sunyer"
+  }
+}

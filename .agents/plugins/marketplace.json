@@ -1,0 +1,20 @@
+{
+  "name": "deliberate-development-local",
+  "interface": {
+    "displayName": "Deliberate Development"
+  },
+  "plugins": [
+    {
+      "name": "dd",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

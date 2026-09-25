@@ -1,0 +1,14 @@
+{
+  "name": "guillem-local",
+  "description": "Local WIP plugins",
+  "owner": {
+    "name": "Guillem Gelabert Sunyer"
+  },
+  "plugins": [
+    {
+      "name": "dd",
+      "source": "./",
+      "description": "Deliberate Development: dd:ground, dd:shape, dd:execute, dd:state, dd:help skills"
+    }
+  ]
+}

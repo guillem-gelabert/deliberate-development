@@ -1,0 +1,3 @@
+interface:
+  display_name: "DD Help"
+  short_description: "Explain the workflow and pick the right dd command"

@@ -1,0 +1,8 @@
+{
+  "name": "dd",
+  "description": "Deliberate Development: ground, shape, and execute non-trivial software work with durable, resumable task state in .work/<task-id>/.",
+  "version": "0.5.5",
+  "author": {
+    "name": "Guillem Gelabert Sunyer"
+  }
+}
