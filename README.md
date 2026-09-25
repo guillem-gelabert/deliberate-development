@@ -35,6 +35,15 @@ codex plugin add dd@deliberate-development-local
 
 Start a new Codex session after installation. The portable root `plugin.json` exposes all five skills from `skills/`; the `.agents/plugins/marketplace.json` entry makes the bundle installable locally. Codex can also add a hosted Git repository as a marketplace source when this repository is published there.
 
+Codex installs plugins for your user only. To use the skills in one project only, copy them into that repository's `.agents/skills/`, which Codex scans for repo-scoped skills:
+
+```bash
+mkdir -p /path/to/your-project/.agents/skills
+cp -R /absolute/path/to/deliberate-development/skills/* /path/to/your-project/.agents/skills/
+```
+
+They load as standalone skills named by their `SKILL.md` frontmatter (`ground`, `shape`, `execute`, `state`, `help`), not through the plugin. Copy them again after updating the checkout.
+
 ### Claude Code
 
 For a session using the checkout directly:
@@ -44,6 +53,15 @@ claude --plugin-dir /absolute/path/to/deliberate-development
 ```
 
 For an installed plugin, run `claude plugin marketplace add /absolute/path/to/deliberate-development` and then `claude plugin install dd@guillem-local`. If it was installed earlier but disabled, run `claude plugin enable dd@guillem-local`. Its skills are available as `/dd:ground`, `/dd:shape`, `/dd:execute`, `/dd:state`, and `/dd:help`.
+
+To enable it for one project only, run the install from that project with local scope:
+
+```bash
+cd /path/to/your-project
+claude plugin install dd@guillem-local --scope local
+```
+
+`local` records the plugin in the project's `.claude/settings.local.json`, which stays out of version control. `--scope project` writes `.claude/settings.json` instead, which is committed, but each teammate still has to add the `guillem-local` marketplace on their own machine.
 
 Upgrading from 0.4.x: the skills were previously `ground-work`, `shape-work`, `execute-work` and `work-state`. Existing `STATUS.md` files with `stage: ground-work`, `shape-work` or `execute-work` still validate, with a warning to rename the stage to `ground`, `shape` or `execute`.
 
